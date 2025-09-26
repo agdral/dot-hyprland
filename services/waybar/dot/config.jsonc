@@ -1,0 +1,58 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "margin-left": 82,
+  "margin-right": 72,
+  "margin-bottom": 15,
+  "start_hidden": true,
+  "exclusive": false,
+  "spacing": 1,
+  "ipc": true,
+  "modules-left": [
+    "tray"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "cpu",
+    "pulseaudio"
+  ],
+  "tray": {
+    "icon-size": 18,
+    "spacing": 5,
+    "show-passive-items": true,
+  },
+  "clock": {
+    "interval": 60,
+    "format": "   {:%a %d-%m  %H:%M}",
+    "timezone": "America/Argentina/Buenos_Aires",
+  },
+  "cpu": {
+    "interval": 2,
+    "format": "  {usage}%",
+    "tooltip": false,
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}% 󰂯",
+    "format-bluetooth-muted": "󰖁 {icon} 󰂯",
+    "format-muted": "󰖁 {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "󱡒",
+      "headset": "󰋎",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "  ",
+        "  ",
+        "  "
+      ],
+    },
+    "on-click": "pavucontrol",
+  },
+}
