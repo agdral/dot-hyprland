@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   systemd.user.services = {
     safeeyes = {
       Unit = {
@@ -9,7 +13,7 @@
       };
       Service = {
         Type = "simple";
-        ExecStart = "${pkgs.safeeyes}/bin/safeeyes -e";
+        ExecStart = "${lib.getExe pkgs.safeeyes} -e";
         Restart = "on-failure";
         RestartSec = 3;
         TimeoutStopSec = 10;

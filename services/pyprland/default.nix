@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   home.packages = [pkgs.pyprland];
   home.file = {
     ".config/hypr/pyprland.toml".text = ''
@@ -20,8 +24,8 @@
       };
       Service = {
         Type = "simple";
-        ExecStart = "${pkgs.pyprland}/bin/pypr";
-        ExecReload = "${pkgs.pyprland}/bin/pypr reload";
+        ExecStart = lib.getExe pkgs.pyprland;
+        ExecReload = "${lib.getExe pkgs.pyprland} reload";
         Restart = "on-failure";
         RestartSec = 3;
         TimeoutStopSec = 10;
