@@ -14,8 +14,6 @@
         Type = "simple";
         ExecStart = "${lib.getExe pkgs.safeeyes} -e";
         Restart = "no";
-        RestartSec = 3;
-        TimeoutStopSec = 10;
       };
       Install = {
         WantedBy = ["graphical-session.target"];

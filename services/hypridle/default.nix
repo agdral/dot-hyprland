@@ -4,15 +4,10 @@
     settings = {
       general = {
         ignore_dbus_inhibit = false;
-        ignore_systemd_inhibit = false;
+        ignore_systemd_inhibit = true;
       };
 
       listener = [
-        {
-          timeout = 300;
-          on-timeout = "safeeyes -d";
-          on-resume =  "safeeyes -e";
-        }
         {
           timeout = 3600;
           on-timeout = "poweroff";
