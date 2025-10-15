@@ -15,10 +15,6 @@
   "$Modm, F, changegroupactive, b"
   "$Modm, L, changegroupactive, f "
 
-  # Scroll through existing workspaces with Mod + scroll
-  "$Modm, mouse_down, workspace, e+1"
-  "$Modm, mouse_up, workspace, e-1"
-
   # Swap Window
   "$Modm, home, swapwindow, l"
   "$Modm, end, swapwindow, r"

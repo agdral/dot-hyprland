@@ -12,6 +12,10 @@
     "$F20" = "XF86AudioMicMute";
 
     bind = tools.importNixList ./binds;
+    bindm = tools.importNixList ./binds/mouse;
+    bindr = tools.importNixList ./binds/release;
+    binde = tools.importNixList ./binds/repeat;
+
     windowrulev2 = tools.importNixList ./rules;
   };
 }

@@ -18,10 +18,4 @@
   "float, title:(SafeEyes-1)"
   "size 100% 100%, title:(SafeEyes-1)"
   "center, title:(SafeEyes-1)"
-
-  "workspace special:editorL,class:(org.pwmt.zathura)"
-  "group set,class:(org.pwmt.zathura)"
-
-  "workspace special:editorL,class:(imv)"
-  "group set,class:(imv)"
 ]
