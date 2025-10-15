@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       general = {
-        ignore_dbus_inhibit = false;
+        ignore_dbus_inhibit = true;
         ignore_systemd_inhibit = true;
       };
 

@@ -16,8 +16,22 @@
         Restart = "no";
       };
       Install = {
-        WantedBy = ["graphical-session.target"];
+        WantedBy = ["timers.target"];
       };
+    };
+  };
+
+  systemd.user.timers.safeeyes = {
+    Unit = {
+      Description = "Run Safe Eyes daily at 09:00";
+    };
+    Timer = {
+      OnCalendar = "*-*-* 09:00:00";
+      Persistent = true;
+      Unit = "safeeyes.service";
+    };
+    Install = {
+      WantedBy = ["timers.target"];
     };
   };
 }
