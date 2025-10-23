@@ -1,4 +1,4 @@
 [
-  "$Modm, mouse:272, moveactive"
+  "$Modm, mouse:272, movewindow"
   "$Modm, mouse:273, resizeactive"
 ]
