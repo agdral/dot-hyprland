@@ -4,7 +4,25 @@
     (writeShellScriptBin "imageShuffle" (builtins.readFile ./dot/imageShuffle.sh))
   ];
 
-  services.swww.enable = true;
+  systemd.user.services = {
+    swww = {
+      Unit = {
+        Description = "Walker";
+        After = ["graphical-session.target"];
+        Requisite = ["graphical-session.target"];
+      };
+      Service = {
+        Type = "simple";
+        ExecStart = "${pkgs.swww}/bin/swww-daemon";
+        Restart = "on-failure";
+        RestartSec = 3;
+        TimeoutStopSec = 10;
+      };
+      Install = {
+        WantedBy = ["graphical-session.target"];
+      };
+    };
+  };
 
   wayland.windowManager.hyprland.settings.exec-once = [
     "imageShuffle $XDG_PICTURES_DIR/Wallpaper"

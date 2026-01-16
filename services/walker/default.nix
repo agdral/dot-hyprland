@@ -1,9 +1,27 @@
-{pkgs, ...}: {
+{pkgs, lib, ...}: {
   home.packages = [pkgs.walker];
   home.file = {
     ".config/walker/config.toml".source = ./dot/config.toml;
     ".config/walker/themes/vault.css".source = ./dot/themes/vault.css;
     ".config/walker/themes/vault.toml".source = ./dot/themes/vault.toml;
   };
-  services.walker.enable = true;
+  systemd.user.services = {
+    walker = {
+      Unit = {
+        Description = "Walker";
+        After = ["graphical-session.target"];
+        Requisite = ["graphical-session.target"];
+      };
+      Service = {
+        Type = "simple";
+        ExecStart = "${lib.getExe pkgs.walker} --gapplication-service";
+        Restart = "on-failure";
+        RestartSec = 3;
+        TimeoutStopSec = 10;
+      };
+      Install = {
+        WantedBy = ["graphical-session.target"];
+      };
+    };
+  };
 }
