@@ -16,6 +16,6 @@
     # bindr = tools.importNixList ./binds/release;
     binde = tools.importNixList ./binds/repeat;
 
-    windowrulev2 = tools.importNixList ./rules;
+    windowrule = tools.importNixList ./rules;
   };
 }

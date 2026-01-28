@@ -1,7 +1,7 @@
 [
-  "workspace special:editorL,class:(org.pwmt.zathura)"
-  "group set,class:(org.pwmt.zathura)"
+  "match:class org.pwmt.zathura, workspace special:editorL"
+  "match:class org.pwmt.zathura, group set"
 
-  "workspace special:editorL,class:(imv)"
-  "group set,class:(imv)"
+  "match:class imv, workspace special:editorL"
+  "match:class imv, group set"
 ]
