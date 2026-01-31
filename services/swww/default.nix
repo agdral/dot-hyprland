@@ -1,7 +1,9 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  imageShuffle = pkgs.writeShellScriptBin "imageShuffle" (builtins.readFile ./dot/imageShuffle.sh);
+in {
   home.packages = with pkgs; [
     swww
-    (writeShellScriptBin "imageShuffle" (builtins.readFile ./dot/imageShuffle.sh))
+    imageShuffle
   ];
 
   systemd.user.services = {
@@ -14,7 +16,10 @@
       };
       Service = {
         Type = "simple";
-        ExecStart = "${pkgs.swww}/bin/swww-daemon";
+
+        ExecStartPre = "${pkgs.swww}/bin/swww-daemon";
+        ExecStart = "${imageShuffle}/bin/imageShuffle /data/kael/Pictures/Wallpaper";
+
         Restart = "on-failure";
         RestartSec = 3;
         TimeoutStopSec = 10;
@@ -24,8 +29,4 @@
       };
     };
   };
-
-  wayland.windowManager.hyprland.settings.exec-once = [
-    "imageShuffle $XDG_PICTURES_DIR/Wallpaper"
-  ];
 }
