@@ -37,7 +37,7 @@ in {
       };
       Service = {
         Type = "simple";
-        ExecStart = "${imageShuffle}/bin/imageShuffle /data/kael/Pictures/Wallpaper";
+        ExecStart = "${imageShuffle}/bin/imageShuffle /data/kael/Pictures/Wallpapers";
         Restart = "on-failure";
         RestartSec = 3;
       };
