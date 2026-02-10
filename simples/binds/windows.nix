@@ -14,6 +14,8 @@
   # Move Position Group
   "$Modm, F, changegroupactive, b"
   "$Modm, L, changegroupactive, f "
+  "$Modm CONTROL, Prior, changegroupactive, b"
+  "$Modm CONTROL, Next, changegroupactive, f "
 
   # Swap Window
   "$Modm, home, swapwindow, l"
