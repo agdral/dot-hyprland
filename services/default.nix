@@ -1,5 +1,5 @@
 {tools, ...}: {
-  imports = tools.importFoldersExcept ./. [];
+  imports = tools.importFoldersExcept ./. ["walker"];
 
   services = {
     hyprpolkitagent.enable = true;
