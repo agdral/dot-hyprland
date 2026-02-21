@@ -7,7 +7,7 @@
 with lib; let
   cfg = config.dotHypr;
 in {
-  options.dotHypr.safeeyes = mkOption {
+  options.dotHypr.safeEyes = mkOption {
     type = types.bool;
     default = false;
   };
