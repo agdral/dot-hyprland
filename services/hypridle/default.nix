@@ -1,18 +1,19 @@
-{...}: {
-  services.hypridle = {
-    enable = true;
-    settings = {
-      general = {
-        ignore_dbus_inhibit = true;
-        ignore_systemd_inhibit = true;
-      };
-
-      listener = [
-        {
-          timeout = 3600;
-          on-timeout = "poweroff";
-        }
-      ];
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+with lib; let
+  cfg = config.dotHypr;
+in {
+  options.dotHypr.apps = mkOption {
+    type = types.bool;
+    default = false;
+  };
+  config = mkIf cfg.apps {
+    services = {
+      hyprpolkitagent.enable = true;
     };
   };
 }
