@@ -11,7 +11,7 @@ in {
     type = types.bool;
     default = false;
   };
-  config = mkIf cfg.safeeyes {
+  config = mkIf cfg.safeEyes {
     systemd.user.services = {
       safeeyes = {
         Unit = {
