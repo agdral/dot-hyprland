@@ -13,11 +13,13 @@
   }: let
     lib = nixpkgs.lib;
   in {
-    homeModules.hyprland = {
+    nixosModules.default = {
+      imports = [./_nixos.nix];
+    };
+    homeModules.default = {
       imports = [
-        ./_settings.nix
-        ./_decoration.nix
-        ./_packages.nix
+        ./_home.nix
+        ./packages
         ./simples
         (import-tree.filter (lib.hasSuffix "/default.nix") ./services)
       ];
