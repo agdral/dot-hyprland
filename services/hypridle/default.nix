@@ -7,13 +7,27 @@
 with lib; let
   cfg = config.dotHypr;
 in {
-  options.dotHypr.apps = mkOption {
+  options.dotHypr.hypridle = mkOption {
     type = types.bool;
     default = false;
   };
-  config = mkIf cfg.apps {
-    services = {
-      hyprpolkitagent.enable = true;
+  config = mkIf cfg.hypridle {
+    services.hypridle = {
+      enable = true;
+      settings = {
+        general = {
+          ignore_dbus_inhibit = true;
+          ignore_systemd_inhibit = true;
+        };
+
+        listener = [
+          {
+            timeout = 3600;
+            on-timeout = "poweroff";
+          }
+        ];
+      };
     };
   };
 }
+
