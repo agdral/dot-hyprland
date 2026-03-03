@@ -53,9 +53,6 @@
         enabled = true;
         animation = [
           "windows,1,8,default,slide"
-          "specialWorkspace, 0"
-          "specialWorkspaceIn, 0"
-          "specialWorkspaceOut, 0"
         ];
       };
 
