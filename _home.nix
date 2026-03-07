@@ -53,12 +53,15 @@
         enabled = true;
         animation = [
           "windows,1,8,default,slide"
+          "workspaces,1,8,default,slidefade 20%"
         ];
       };
 
       group = {
+        auto_group = true;
         "col.border_active" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.border_inactive" = "rgba(595959aa)";
+        group_on_movetoworkspace = true;
         groupbar = {
           render_titles = false;
           rounding = 4;
