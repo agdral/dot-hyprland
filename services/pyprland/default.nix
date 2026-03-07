@@ -16,10 +16,7 @@ in {
     home.file = {
       ".config/hypr/pyprland.toml".text = ''
         [pyprland]
-        plugins = ["magnify"]
-
-        [pyprland.variables]
-        term_classed = "kitty --class"
+        plugins = ["magnify", "toggle_special"]
       '';
     };
 
