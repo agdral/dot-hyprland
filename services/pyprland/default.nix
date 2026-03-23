@@ -16,7 +16,7 @@ in {
     home.file = {
       ".config/hypr/pyprland.toml".text = ''
         [pyprland]
-        plugins = ["magnify", "toggle_special"]
+        plugins = ["magnify"]
       '';
     };
 

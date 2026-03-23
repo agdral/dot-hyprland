@@ -1,4 +1,4 @@
-{tools, ...}: {
+{joinix, ...}: {
   wayland.windowManager.hyprland.settings = {
     "$Modm" = "SUPER";
     "$ModS" = "SUPER SHIFT";
@@ -11,11 +11,11 @@
     "$F21" = "XF86TouchpadToggle";
     "$F20" = "XF86AudioMicMute";
 
-    bind = tools.importNixList ./binds;
-    bindm = tools.importNixList ./binds/mouse;
-    # bindr = tools.importNixList ./binds/release;
-    binde = tools.importNixList ./binds/repeat;
+    bind = joinix.importNixList ./binds;
+    bindm = joinix.importNixList ./binds/mouse;
+    # bindr = joinix.importNixList ./binds/release;
+    binde = joinix.importNixList ./binds/repeat;
 
-    windowrule = tools.importNixList ./rules;
+    windowrule = joinix.importNixList ./rules;
   };
 }
