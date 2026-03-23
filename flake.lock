@@ -15,7 +15,41 @@
         "type": "github"
       }
     },
+    "joinix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1774305540,
+        "narHash": "sha256-n+SqL2rtMW/1nuEnrq61lhFuo8/pKyl0awPgznjrdxc=",
+        "owner": "agdral",
+        "repo": "joinix",
+        "rev": "35fe8451e75eb6f92024084d696ff17fa2814d37",
+        "type": "github"
+      },
+      "original": {
+        "owner": "agdral",
+        "repo": "joinix",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
+      "locked": {
+        "lastModified": 1774106199,
+        "narHash": "sha256-US5Tda2sKmjrg2lNHQL3jRQ6p96cgfWh3J1QBliQ8Ws=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "6c9a78c09ff4d6c21d0319114873508a6ec01655",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1771369470,
         "narHash": "sha256-0NBlEBKkN3lufyvFegY4TYv5mCNHbi5OmBDrzihbBMQ=",
@@ -34,7 +68,8 @@
     "root": {
       "inputs": {
         "import-tree": "import-tree",
-        "nixpkgs": "nixpkgs"
+        "joinix": "joinix",
+        "nixpkgs": "nixpkgs_2"
       }
     }
   },

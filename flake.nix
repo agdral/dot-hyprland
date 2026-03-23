@@ -13,15 +13,13 @@
     ...
   }: let
     lib = nixpkgs.lib;
-    joinix = import inputs.joinix.homeModules.default;
+    joinix = inputs.joinix.homeModules.default;
   in {
     nixosModules.default = {
       imports = [./_nixos.nix];
     };
     homeModules.default = {
-      _module.args = {
-        inherit joinix;
-      };
+      _module.args = {inherit joinix;};
       imports = [
         ./_home.nix
         ./packages
