@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1774371786,
+        "narHash": "sha256-ag1HUJv0SDBqKAYxwWlvAE2gBsEk3XYFvWtmdAHFz7E=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "b8cb89f2c4f7006b17b4aa5d8b39b95b93b559d8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "import-tree": {
       "locked": {
         "lastModified": 1771045967,
@@ -15,16 +35,13 @@
         "type": "github"
       }
     },
-    "joinix": {
-      "inputs": {
-        "nixpkgs": "nixpkgs"
-      },
+    "joinix-nix": {
       "locked": {
-        "lastModified": 1774305540,
-        "narHash": "sha256-n+SqL2rtMW/1nuEnrq61lhFuo8/pKyl0awPgznjrdxc=",
+        "lastModified": 1774308275,
+        "narHash": "sha256-1g0MdWsOzm7YFa4Xvhr9Npd+31WxYnw+p9ok2mqz6/M=",
         "owner": "agdral",
         "repo": "joinix",
-        "rev": "35fe8451e75eb6f92024084d696ff17fa2814d37",
+        "rev": "4e278b76d2dd83d9fc5bd0507fa5f9c5b39b44d1",
         "type": "github"
       },
       "original": {
@@ -34,22 +51,6 @@
       }
     },
     "nixpkgs": {
-      "locked": {
-        "lastModified": 1774106199,
-        "narHash": "sha256-US5Tda2sKmjrg2lNHQL3jRQ6p96cgfWh3J1QBliQ8Ws=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "6c9a78c09ff4d6c21d0319114873508a6ec01655",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
       "locked": {
         "lastModified": 1771369470,
         "narHash": "sha256-0NBlEBKkN3lufyvFegY4TYv5mCNHbi5OmBDrzihbBMQ=",
@@ -67,9 +68,10 @@
     },
     "root": {
       "inputs": {
+        "home-manager": "home-manager",
         "import-tree": "import-tree",
-        "joinix": "joinix",
-        "nixpkgs": "nixpkgs_2"
+        "joinix-nix": "joinix-nix",
+        "nixpkgs": "nixpkgs"
       }
     }
   },

@@ -4,16 +4,23 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     import-tree.url = "github:vic/import-tree";
-    joinix.url = "github:agdral/joinix";
+    joinix-nix.url = "github:agdral/joinix";
+
+    # Tester Modules
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
+    self,
     nixpkgs,
     import-tree,
     ...
   }: let
     lib = nixpkgs.lib;
-    joinix = inputs.joinix.homeModules.default;
+    joinix = inputs.joinix-nix.homeModules.default;
   in {
     nixosModules.default = {
       imports = [./_nixos.nix];
@@ -26,6 +33,10 @@
         ./simples
         (import-tree.filter (lib.hasSuffix "/default.nix") ./services)
       ];
+    };
+
+    nixosConfigurations = import _tester/config.nix {
+      inherit self inputs lib joinix;
     };
   };
 }
