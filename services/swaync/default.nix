@@ -7,10 +7,7 @@
 with lib; let
   cfg = config.dotHypr;
 in {
-  options.dotHypr.swaync = mkOption {
-    type = types.bool;
-    default = false;
-  };
+  options.dotHypr.swaync = mkEnableOption "swaync";
   config = mkIf cfg.swaync {
     services.swaync = {
       enable = true;

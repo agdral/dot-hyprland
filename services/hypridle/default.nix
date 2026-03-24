@@ -7,10 +7,7 @@
 with lib; let
   cfg = config.dotHypr;
 in {
-  options.dotHypr.hypridle = mkOption {
-    type = types.bool;
-    default = false;
-  };
+  options.dotHypr.hypridle = mkEnableOption "hypridle";
   config = mkIf cfg.hypridle {
     services.hypridle = {
       enable = true;

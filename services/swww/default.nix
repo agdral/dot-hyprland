@@ -8,10 +8,7 @@ with lib; let
   cfg = config.dotHypr;
   imageShuffle = pkgs.writeShellScriptBin "imageShuffle" (builtins.readFile ./dot/imageShuffle.sh);
 in {
-  options.dotHypr.swww = mkOption {
-    type = types.bool;
-    default = false;
-  };
+  options.dotHypr.swww = mkEnableOption "swww";
   config = mkIf cfg.swww {
     home.packages = with pkgs; [
       swww

@@ -7,10 +7,7 @@
 with lib; let
   cfg = config.dotHypr;
 in {
-  options.dotHypr.pyprland = mkOption {
-    type = types.bool;
-    default = false;
-  };
+  options.dotHypr.pyprland = mkEnableOption "pyprland";
   config = mkIf cfg.pyprland {
     home.packages = [pkgs.pyprland];
     home.file = {

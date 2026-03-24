@@ -7,10 +7,7 @@
 with lib; let
   cfg = config.dotHypr;
 in {
-  options.dotHypr.apps = mkOption {
-    type = types.bool;
-    default = false;
-  };
+  options.dotHypr.apps = mkEnableOption "apps";
   config = mkIf cfg.apps {
     services = {
       hyprpolkitagent.enable = true;

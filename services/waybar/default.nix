@@ -7,10 +7,7 @@
 with lib; let
   cfg = config.dotHypr;
 in {
-  options.dotHypr.waybar = mkOption {
-    type = types.bool;
-    default = false;
-  };
+  options.dotHypr.waybar = mkEnableOption "waybar";
   config = mkIf cfg.waybar {
     home.packages = [pkgs.waybar];
     home.file = {

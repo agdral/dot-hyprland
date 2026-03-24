@@ -7,10 +7,7 @@
 with lib; let
   cfg = config.dotHypr;
 in {
-  options.dotHypr.vicinae = mkOption {
-    type = types.bool;
-    default = false;
-  };
+  options.dotHypr.vicinae = mkEnableOption "vicinae";
   config = mkIf cfg.vicinae {
     home.packages = [pkgs.vicinae];
 

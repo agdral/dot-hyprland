@@ -7,10 +7,7 @@
 with lib; let
   cfg = config.dotHypr;
 in {
-  options.dotHypr.safeEyes = mkOption {
-    type = types.bool;
-    default = false;
-  };
+  options.dotHypr.safeEyes = mkEnableOption "safeEyes";
   config = mkIf cfg.safeEyes {
     systemd.user.services = {
       safeeyes = {
