@@ -6,4 +6,5 @@
   "$HyprRm, P, exec, grimblast save area"
 
   ", $F20, exec, pkill -SIGUSR1 waybar"
+  ", $F23, exec, vicinae open"
 ]
