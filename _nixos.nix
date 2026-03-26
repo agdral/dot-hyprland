@@ -17,6 +17,11 @@
           qtvirtualkeyboard
           qtmultimedia
         ];
+        settings = {
+          General = {
+            InputMethod = "qtvirtualkeyboard";
+          };
+        };
       };
     };
   };
