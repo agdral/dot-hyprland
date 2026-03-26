@@ -16,9 +16,8 @@
   };
 
   environment.systemPackages = [
-    pkgs.sddm-astronaut.override
-    {
+    (pkgs.sddm-astronaut.override {
       embeddedTheme = "pixel_sakura";
-    }
+    })
   ];
 }
