@@ -10,12 +10,15 @@
       sddm = {
         enable = true;
         wayland.enable = true;
-        theme = "pixel_sakura";
+        theme = "sddm-astronaut-theme";
       };
     };
   };
 
   environment.systemPackages = [
-    pkgs.sddm-astronaut
+    pkgs.sddm-astronaut.override
+    {
+      embeddedTheme = "pixel_sakura";
+    }
   ];
 }
