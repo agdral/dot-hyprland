@@ -11,6 +11,12 @@
         enable = true;
         wayland.enable = true;
         theme = "sddm-astronaut-theme";
+        extraPackages = with pkgs.kdePackages; [
+          qtmultimedia
+          qtsvg
+          qtvirtualkeyboard
+          qtmultimedia
+        ];
       };
     };
   };
@@ -19,6 +25,5 @@
     (pkgs.sddm-astronaut.override {
       embeddedTheme = "pixel_sakura";
     })
-    pkgs.kdePackages.qtmultimedia
   ];
 }
