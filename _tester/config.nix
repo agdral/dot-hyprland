@@ -6,7 +6,7 @@
   ...
 }: let
   system = "x86_64-linux";
-  hyprFunc = self.homeModules.hyprFunc { inherit lib; };
+  hyprFunc = self.homeModules.hyprFunc {inherit lib;};
   workSpacesF = hyprFunc.workSpaces (joinix.importNixList ./works);
   workSpecialsF = hyprFunc.workSpecials (joinix.importNixList ./workers);
 in {

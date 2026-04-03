@@ -8,15 +8,15 @@ with lib; let
   cfg = config.dotHypr;
   imageShuffle = pkgs.writeShellScriptBin "imageShuffle" (builtins.readFile ./dot/imageShuffle.sh);
 in {
-  options.dotHypr.swww = mkEnableOption "swww";
-  config = mkIf cfg.swww {
+  options.dotHypr.awww = mkEnableOption "awww";
+  config = mkIf cfg.awww {
     home.packages = with pkgs; [
-      swww
+      awww
       imageShuffle
     ];
 
     systemd.user.services = {
-      swww = {
+      awww = {
         Unit = {
           Description = "Walker";
           After = ["graphical-session.target"];
@@ -26,7 +26,7 @@ in {
         Service = {
           Type = "simple";
 
-          ExecStart = "${pkgs.swww}/bin/swww-daemon";
+          ExecStart = "${pkgs.awww}/bin/awww-daemon";
 
           Restart = "on-failure";
           RestartSec = 3;
@@ -40,7 +40,7 @@ in {
       imageShuffle = {
         Unit = {
           Description = "Image Shuffle Wallpaper Service";
-          After = ["graphical-session.target" "swww.service"];
+          After = ["graphical-session.target" "awww.service"];
           Requisite = ["graphical-session.target"];
           ConditionEnvironment = ["HYPRLAND_INSTANCE_SIGNATURE"];
         };

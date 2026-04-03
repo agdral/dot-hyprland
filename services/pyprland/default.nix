@@ -11,7 +11,7 @@ in {
   config = mkIf cfg.pyprland {
     home.packages = [pkgs.pyprland];
     home.file = {
-      ".config/hypr/pyprland.toml".text = ''
+      ".config/pypr/config.toml".text = ''
         [pyprland]
         plugins = ["magnify"]
       '';
