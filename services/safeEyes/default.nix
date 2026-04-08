@@ -15,6 +15,7 @@ in {
           Description = "safeeyes";
           After = ["graphical-session.target"];
           Requisite = ["graphical-session.target"];
+          ConditionEnvironment = ["HYPRLAND_INSTANCE_SIGNATURE"];
         };
         Service = {
           Type = "simple";
@@ -22,22 +23,8 @@ in {
           Restart = "no";
         };
         Install = {
-          WantedBy = ["timers.target"];
+          WantedBy = ["graphical-session.target"];
         };
-      };
-    };
-
-    systemd.user.timers.safeeyes = {
-      Unit = {
-        Description = "Run Safe Eyes daily at 09:00";
-      };
-      Timer = {
-        OnCalendar = "*-*-* 09:00:00";
-        Persistent = true;
-        Unit = "safeeyes.service";
-      };
-      Install = {
-        WantedBy = ["timers.target"];
       };
     };
   };
