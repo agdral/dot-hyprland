@@ -18,7 +18,7 @@ in {
       "waybar"
     ];
     home.file.".local/bin/missing-time" = {
-      source = dot/missing-time; 
+      source = ./dot/missing-time; 
       executable = true; 
     };
   };
