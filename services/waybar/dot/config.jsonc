@@ -21,17 +21,21 @@
   "tray": {
     "icon-size": 18,
     "spacing": 5,
-    "show-passive-items": true,
+    "show-passive-items": true
   },
   "clock": {
     "interval": 60,
     "format": "   {:%a %d-%m  %H:%M}",
-    "timezone": "America/Argentina/Buenos_Aires",
+    "timezone": "America/Argentina/Buenos_Aires"
+  },
+  "custom/missing-time": {
+    "exec": "missing-time '2002-11-14' '70'",
+    "interval": 1
   },
   "cpu": {
     "interval": 2,
     "format": "  {usage}%",
-    "tooltip": false,
+    "tooltip": false
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
@@ -51,8 +55,8 @@
         "  ",
         "  ",
         "  "
-      ],
+      ]
     },
-    "on-click": "pavucontrol",
-  },
+    "on-click": "pavucontrol"
+  }
 }

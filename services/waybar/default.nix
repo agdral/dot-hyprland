@@ -17,5 +17,9 @@ in {
     wayland.windowManager.hyprland.settings.exec-once = [
       "waybar"
     ];
+    home.file.".local/bin/missing-time" = {
+      source = dot/missing-time; 
+      executable = true; 
+    };
   };
 }
