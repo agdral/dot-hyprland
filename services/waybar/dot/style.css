@@ -103,8 +103,17 @@ button:hover {
   color: @green;
 }
 
+#cpu {
+  color: @accent2;
+  font-weight: 600;
+  margin-right: 10px;
+  padding: 6px 15px;
+  border-radius: 90px;
+  background: @bg01;
+  min-width: 50px;  
+}
+
 #custom-tomato,
-#cpu,
 #temperature,
 #memory,
 #disk {
@@ -123,6 +132,7 @@ button:hover {
   padding: 6px 15px;
   border-radius: 90px;
   background: @accent1;
+  min-width: 50px;  
 }
 
 #network {
@@ -151,13 +161,14 @@ button:hover {
   background: @bg01;
 }
 
-#custom-life_time {
-  color: @accent2;
+#custom-missing-time {
+  color: @bg01;
   font-weight: 600;
   margin-right: 10px;
   padding: 6px 15px;
   border-radius: 90px;
-  background: @bg01;
+  background: @accent1;
+  min-width: 130px;  
 }
 
 #custom-sepp {

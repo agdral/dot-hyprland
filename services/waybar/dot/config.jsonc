@@ -15,6 +15,7 @@
     "clock"
   ],
   "modules-right": [
+    "custom/missing-time",
     "cpu",
     "pulseaudio"
   ],
