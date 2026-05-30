@@ -2,9 +2,10 @@
   description = "Hyprland Dotfile";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
     import-tree.url = "github:vic/import-tree";
     joinix-nix.url = "github:agdral/joinix";
+    nixstable.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
 
     # Tester Modules
     home-manager = {
