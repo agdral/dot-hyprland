@@ -10,6 +10,7 @@ in {
   config = mkIf cfg.apps {
     services = {
       hyprpolkitagent.enable = true;
+      flatpak.enable = true;
     };
   };
 }
