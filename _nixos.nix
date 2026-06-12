@@ -5,6 +5,7 @@
   };
 
   services = {
+    flatpak.enable = true;
     displayManager = {
       defaultSession = "hyprland-uwsm";
       sddm = {
