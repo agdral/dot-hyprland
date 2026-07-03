@@ -1,6 +1,6 @@
 [
-  "$HyprOm, 0, hyprshot -m region -o /data/kael/Pictures/Screenshot"
-  "$HyprOm, backslash, hyprshot -m output -o /data/kael/Pictures/Screenshot"
-  "$HyprOm, equal, hyprshot -m window -o /data/kael/Pictures/Screenshot"
+  "$HyprOm, 0, exec, hyprshot -m region -o /data/kael/Pictures/Screenshot"
+  "$HyprOm, backslash, exec, hyprshot -m output -o /data/kael/Pictures/Screenshot"
+  "$HyprOm, equal, exec, hyprshot -m window -o /data/kael/Pictures/Screenshot"
 ]
 
