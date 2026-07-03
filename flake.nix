@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
     import-tree.url = "github:vic/import-tree";
-    joinix-nix.url = "github:agdral/joinix";
+    joinix.url = "github:agdral/joinix";
     nixstable.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
 
     # Tester Modules
@@ -18,10 +18,10 @@
     self,
     nixpkgs,
     import-tree,
+    joinix,
     ...
   }: let
     lib = nixpkgs.lib;
-    joinix = inputs.joinix-nix.homeModules.default;
   in {
     nixosModules.default = {
       imports = [./_nixos.nix];
