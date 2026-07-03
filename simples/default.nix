@@ -13,7 +13,6 @@
 
     bind = joinix.importNixList ./binds;
     bindm = joinix.importNixList ./binds/mouse;
-    # bindr = joinix.importNixList ./binds/release;
     binde = joinix.importNixList ./binds/repeat;
 
     windowrule = joinix.importNixList ./rules;
