@@ -11,23 +11,13 @@ in {
   config = mkIf cfg.vicinae {
     home.packages = [pkgs.vicinae];
 
-    systemd.user.services = {
-      vicinae = {
-        Unit = {
-          Description = "Vicinae";
-          After = ["graphical-session.target"];
-          Requisite = ["graphical-session.target"];
-          ConditionEnvironment = ["HYPRLAND_INSTANCE_SIGNATURE"];
-        };
-        Service = {
-          Type = "simple";
-          ExecStart = "${lib.getExe pkgs.vicinae} server";
-          Restart = "on-failure";
-          RestartSec = 3;
-          TimeoutStopSec = 10;
-        };
-        Install = {
-          WantedBy = ["graphical-session.target"];
+    programs.vicinae = {
+      enable = true; 
+      systemd = {
+        enable = true;
+        autoStart = true;
+        environment = {
+          USE_LAYER_SHELL = 1;
         };
       };
     };
