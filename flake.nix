@@ -2,10 +2,12 @@
   description = "Hyprland Dotfile";
 
   inputs = {
-    import-tree.url = "github:vic/import-tree";
-    joinix.url = "github:agdral/joinix";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
+    nixstable.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
 
-    # Tester Modules
+    import-tree.url = "github:vic/import-tree";
+    joinix-nix.url = "github:agdral/joinix";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,10 +18,10 @@
     self,
     nixpkgs,
     import-tree,
-    joinix,
     ...
   }: let
     lib = nixpkgs.lib;
+    joinix = inputs.joinix-nix.homeModules.default;
   in {
     nixosModules.default = {
       imports = [./_nixos.nix];
