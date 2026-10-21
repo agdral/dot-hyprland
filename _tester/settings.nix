@@ -1,6 +1,7 @@
 {...}: {
   dotHypr = {
     apps = true;
+    awww = true;
     hypridle = true;
     pyprland = true;
     safeEyes = true;

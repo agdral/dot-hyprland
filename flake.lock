@@ -35,7 +35,7 @@
         "type": "github"
       }
     },
-    "joinix": {
+    "joinix-nix": {
       "locked": {
         "lastModified": 1781763374,
         "narHash": "sha256-FJk4r72qVOa9KmeqO0gnJRnUq0ZbBtz636TalX6vN6I=",
@@ -82,7 +82,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "import-tree": "import-tree",
-        "joinix": "joinix",
+        "joinix-nix": "joinix-nix",
         "nixpkgs": "nixpkgs",
         "nixstable": "nixstable"
       }
