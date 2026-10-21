@@ -6,9 +6,9 @@
   ...
 }: let
   system = "x86_64-linux";
-  hyprFunc = self.homeModules.hyprFunc {inherit lib;};
-  workSpacesF = hyprFunc.workSpaces (joinix.importNixList ./works);
-  workSpecialsF = hyprFunc.workSpecials (joinix.importNixList ./workers);
+  # hyprFunc = self.homeModules.hyprFunc {inherit lib;};
+  # workSpacesF = hyprFunc.workSpaces (joinix.importNixList ./works);
+  # workSpecialsF = hyprFunc.workSpecials (joinix.importNixList ./workers);
 in {
   tester = lib.nixosSystem {
     inherit system;
@@ -47,16 +47,16 @@ in {
             ./settings.nix
           ];
 
-          wayland.windowManager.hyprland.settings = {
-            monitor = [
-              "HDMI-A-1,1920x1080@60,0x0,1"
-            ];
-
-            workspace = workSpacesF.workspace;
-            bind = workSpacesF.bind ++ workSpecialsF.bind;
-            exec-once = workSpecialsF.exec-once;
-            windowrule = workSpecialsF.windowrule;
-          };
+          # wayland.windowManager.hyprland.settings = {
+          #   monitor = [
+          #     "HDMI-A-1,1920x1080@60,0x0,1"
+          #   ];
+          #
+          #   workspace = workSpacesF.workspace;
+          #   bind = workSpacesF.bind ++ workSpecialsF.bind;
+          #   exec-once = workSpecialsF.exec-once;
+          #   windowrule = workSpecialsF.windowrule;
+          # };
 
           home = {
             stateVersion = "26.05";

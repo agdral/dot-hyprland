@@ -9,7 +9,7 @@
     extraLuaFiles = {
       "binds" = {
         content = ./simples/binds.lua;
-        autoload = true;
+        autoLoad = true;
       };
     };
 
