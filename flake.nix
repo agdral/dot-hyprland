@@ -6,7 +6,7 @@
     nixstable.url = "https://flakehub.com/f/NixOS/nixpkgs/*";
 
     import-tree.url = "github:vic/import-tree";
-    joinix-nix.url = "github:agdral/joinix";
+    joinix.url = "github:agdral/joinix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -18,10 +18,10 @@
     self,
     nixpkgs,
     import-tree,
+    joinix,
     ...
   }: let
     lib = nixpkgs.lib;
-    joinix = inputs.joinix-nix.homeModules.default;
   in {
     nixosModules.default = {
       imports = [./_nixos.nix];
@@ -31,11 +31,11 @@
       imports = [
         ./_home.nix
         ./packages
-        ./simples
+        # ./simples
         (import-tree.filter (lib.hasSuffix "/default.nix") ./services)
       ];
     };
-    homeModules.hyprFunc = import ./functions;
+    # homeModules.hyprFunc = import ./functions;
 
     nixosConfigurations = import _tester/config.nix {
       inherit self inputs lib joinix;

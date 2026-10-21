@@ -4,7 +4,14 @@
     package = null;
     portalPackage = null;
     systemd.enable = false;
-    configType = "hyprlang";
+    configType = "lua";
+
+    extraLuaFiles = {
+      "binds" = {
+        content = ./simples/binds.lua;
+        autoload = true;
+      };
+    };
 
     settings = {
       general = {
