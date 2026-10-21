@@ -4,18 +4,7 @@
     package = null;
     portalPackage = null;
     systemd.enable = false;
-<<<<<<< HEAD
-    configType = "lua";
-
-    extraLuaFiles = {
-      "binds" = {
-        content = ./simples/binds.lua;
-        autoLoad = true;
-      };
-    };
-=======
     configType = "hyprlang";
->>>>>>> parent of ed3e147 (chaneg lang to lua)
 
     settings = {
       general = {
