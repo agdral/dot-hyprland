@@ -31,11 +31,9 @@
       imports = [
         ./_home.nix
         ./packages
-        ./simples
         (import-tree.filter (lib.hasSuffix "/default.nix") ./services)
       ];
     };
-    homeModules.hyprFunc = import ./functions;
 
     nixosConfigurations = import _tester/config.nix {
       inherit self inputs lib joinix;
