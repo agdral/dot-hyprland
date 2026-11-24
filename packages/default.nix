@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     hyprshot
     hyprpicker
-    hyprland-qtutils
+    hyprland-guiutils
     grimblast
   ];
 }
